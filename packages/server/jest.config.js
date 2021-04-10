@@ -13,8 +13,10 @@ module.exports = {
     '**/*.(controller|service|provider|guard|pipe|interceptor|filter).(t|j)s',
   ],
   coverageDirectory: 'coverage',
+  preset: 'ts-jest',
   projects: undefined,
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
     prefix: '<rootDir>',
   }),
+  testEnvironment: 'node',
 };

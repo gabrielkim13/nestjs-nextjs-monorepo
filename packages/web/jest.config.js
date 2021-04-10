@@ -17,18 +17,13 @@ module.exports = {
   ],
   coverageDirectory: 'coverage',
   moduleNameMapper: {
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/test/__mocks__/fileMock.js',
+    '\\.(css|less)$': 'identity-obj-proxy',
     ...pathsToModuleNameMapper(compilerOptions.paths, {
       prefix: '<rootDir>',
     }),
-    '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
-    '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__mocks__/fileMock.js',
   },
-  testEnvironment: 'jsdom',
-  testPathIgnorePatterns: ['<rootDir>[/\\\\](node_modules|.next)[/\\\\]'],
-  transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
-  transform: {
-    '^.+\\.(ts|tsx)$': 'babel-jest',
-  },
+  setupFilesAfterEnv: ['<rootDir>/test/setupTests.ts'],
   watchPlugins: [
     'jest-watch-typeahead/filename',
     'jest-watch-typeahead/testname',

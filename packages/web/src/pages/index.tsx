@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import Image from 'next/image';
+
+import vercel from '@assets/vercel.svg';
 
 export const Home = (): JSX.Element => (
   <div className="container">
@@ -59,8 +60,7 @@ export const Home = (): JSX.Element => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        Powered by{' '}
-        <Image src="/vercel.svg" alt="Vercel Logo" height="32" width="64" />
+        Powered by <img src={vercel} alt="Vercel Logo" height="32" width="64" />
       </a>
     </footer>
 
