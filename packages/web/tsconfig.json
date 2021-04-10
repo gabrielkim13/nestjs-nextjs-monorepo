@@ -1,0 +1,20 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ES2017"],
+    "allowJs": true,
+    "jsx": "preserve",
+    "removeComments": false,
+    "noEmit": true,
+    "isolatedModules": true,
+    "baseUrl": "./",
+    "paths": {
+      "@pages/*": ["./src/pages/*"]
+    },
+    "resolveJsonModule": true
+  },
+  "exclude": ["node_modules", ".next", "out"],
+  "include": ["next-env.d.ts", "src", "test"]
+}

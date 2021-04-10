@@ -1,0 +1,12 @@
+{
+  "editor.rulers": [80],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "[markdown]": {
+    "editor.rulers": [100],
+    "editor.wordWrapColumn": 100,
+    "editor.wordWrap": "wordWrapColumn"
+  },
+  "typescript.tsdk": "node_modules\\typescript\\lib"
+}

@@ -1,0 +1,56 @@
+{
+  "name": "nestjs-nextjs-monorepo",
+  "description": "Template repository for NestJS + Next.js monorepo projects.",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "prepare": "husky install",
+    "build": "yarn workspaces run build",
+    "format": "yarn workspaces run format",
+    "lint": "yarn workspaces run lint",
+    "type-check": "yarn workspaces run type-check",
+    "start": "concurrently \"yarn workspace @nestjs-nextjs-monorepo/server start:dev\" \"yarn workspace @nestjs-nextjs-monorepo/web dev\"",
+    "test": "yarn workspaces run test"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn type-check"
+    }
+  },
+  "lint-staged": {
+    "*.@(ts|tsx)": [
+      "yarn lint",
+      "yarn format"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.22",
+    "@types/node": "^14.14.37",
+    "@typescript-eslint/eslint-plugin": "^4.21.0",
+    "@typescript-eslint/parser": "^4.21.0",
+    "concurrently": "^6.0.1",
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": ">=6",
+    "jest": "^26.6.3",
+    "lint-staged": ">=10",
+    "prettier": "^2.2.1",
+    "ts-jest": "^26.5.4",
+    "typescript": "^4.2.4"
+  }
+}
