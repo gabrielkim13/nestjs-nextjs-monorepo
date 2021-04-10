@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "main": "index.ts",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "prepare": "husky install",
     "build": "yarn workspaces run build",
