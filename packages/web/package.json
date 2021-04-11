@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "format": "prettier --write \"{src,test}/**/*.{ts,tsx}\"",
-    "lint": "eslint \"{src,test}/**/*.{ts,tsx}\" --rule 'import/no-unresolved: off' --fix",
+    "lint": "eslint \"{src,test}/**/*.{ts,tsx}\" --fix",
     "type-check": "tsc --pretty --noEmit",
     "test": "jest",
     "test-all": "yarn lint && yarn type-check && yarn test"

@@ -8,8 +8,8 @@
   "scripts": {
     "prepare": "husky install",
     "build": "yarn workspaces run build",
-    "format": "yarn workspaces run format",
-    "lint": "yarn workspaces run lint",
+    "format": "prettier --write \"packages/**/{src,apps,libs,test}/**/*.{ts,tsx}\"",
+    "lint": "eslint \"packages/**/{src,apps,libs,test}/**/*.{ts,tsx}\" --fix",
     "type-check": "yarn workspaces run type-check",
     "start": "concurrently \"yarn workspace @nestjs-nextjs-monorepo/server start:dev\" \"yarn workspace @nestjs-nextjs-monorepo/web dev\"",
     "test": "yarn workspaces run test"
